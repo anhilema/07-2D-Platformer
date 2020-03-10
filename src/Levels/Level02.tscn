@@ -1,0 +1,366 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/background.png" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=8]
+
+[node name="Level02" type="Node2D"]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+
+[node name="UserInterface" parent="InterfaceLayer" instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 80, 80 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -1114037, 0, 0, -1048501, 0, 0, -917505, 0, 0, -982965, 0, 0, -851969, 0, 0, -917429, 0, 0, -786433, 0, 0, -851893, 0, 0, -720897, 0, 0, -786357, 0, 0, -655361, 0, 0, -720821, 0, 0, -589825, 0, 0, -655285, 0, 0, -524289, 0, 0, -589780, 0, 0, -589749, 0, 0, -458753, 0, 0, -524245, 0, 0, -524244, 0, 0, -524243, 0, 0, -524242, 0, 0, -524241, 0, 0, -524213, 0, 0, -393217, 0, 0, -458711, 0, 0, -458710, 0, 0, -458704, 0, 0, -458703, 0, 0, -458699, 0, 0, -458688, 0, 0, -458687, 0, 0, -458677, 0, 0, -327681, 0, 0, -393176, 0, 0, -393168, 0, 0, -393167, 0, 0, -393163, 0, 0, -393141, 0, 0, -262145, 0, 0, -327642, 0, 0, -327641, 0, 0, -327632, 0, 0, -327631, 0, 0, -327627, 0, 0, -327626, 0, 0, -327620, 0, 0, -327619, 0, 0, -327613, 0, 0, -327612, 0, 0, -327611, 0, 0, -327605, 0, 0, -196609, 0, 0, -262108, 0, 0, -262107, 0, 0, -262096, 0, 0, -262095, 0, 0, -262091, 0, 0, -262069, 0, 0, -131073, 0, 0, -196573, 0, 0, -196560, 0, 0, -196559, 0, 0, -196555, 0, 0, -196549, 0, 0, -196536, 1, 0, -196535, 1, 0, -196533, 0, 0, -65537, 0, 0, -131038, 0, 0, -131024, 0, 0, -131023, 0, 0, -131019, 0, 0, -131018, 0, 0, -130997, 0, 0, -1, 0, 0, -65503, 0, 0, -65488, 0, 0, -65487, 0, 0, -65483, 0, 0, -65461, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 32, 0, 0, 48, 0, 0, 49, 0, 0, 53, 0, 0, 56, 0, 0, 69, 1, 0, 70, 1, 0, 75, 0, 0, 131066, 0, 0, 131071, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65577, 0, 0, 65578, 0, 0, 65579, 0, 0, 65580, 0, 0, 65581, 0, 0, 65582, 0, 0, 65583, 0, 0, 65584, 0, 0, 65585, 0, 0, 65586, 0, 0, 65587, 0, 0, 65588, 0, 0, 65589, 0, 0, 65611, 0, 0, 196602, 0, 0, 131110, 0, 0, 131111, 0, 0, 131115, 0, 0, 131116, 0, 0, 131117, 0, 0, 131118, 0, 0, 131119, 0, 0, 131120, 0, 0, 131121, 0, 0, 131122, 0, 0, 131123, 0, 0, 131124, 0, 0, 131125, 0, 0, 131137, 1, 0, 131138, 1, 0, 131147, 0, 0, 262138, 0, 0, 196643, 0, 0, 196644, 0, 0, 196683, 0, 0, 327674, 0, 0, 262163, 0, 0, 262172, 0, 0, 262176, 0, 0, 262177, 0, 0, 262213, 1, 0, 262214, 1, 0, 262219, 0, 0, 393210, 0, 0, 327700, 1, 0, 327701, 1, 0, 327702, 1, 0, 327703, 1, 0, 327704, 1, 0, 327705, 1, 0, 327706, 1, 0, 327707, 1, 0, 327755, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 0, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393246, 0, 0, 393291, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458802, 0, 0, 458809, 0, 0, 458824, 0, 0, 458825, 0, 0, 458827, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524321, 0, 0, 524339, 0, 0, 524340, 0, 0, 524341, 0, 0, 524342, 0, 0, 524343, 0, 0, 524344, 0, 0, 524356, 0, 0, 524357, 0, 0, 524363, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589865, 0, 0, 589871, 0, 0, 589883, 0, 0, 589884, 0, 0, 589890, 0, 0, 589891, 0, 0, 589892, 0, 0, 589893, 0, 0, 589897, 0, 0, 589898, 0, 0, 589899, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655396, 0, 0, 655402, 0, 0, 655403, 0, 0, 655404, 0, 0, 655405, 0, 0, 655406, 0, 0, 655407, 0, 0, 655408, 0, 0, 655419, 0, 0, 655420, 0, 0, 655421, 0, 0, 655422, 0, 0, 655423, 0, 0, 655424, 0, 0, 655425, 0, 0, 655426, 0, 0, 655427, 0, 0, 655428, 0, 0, 655429, 0, 0, 655433, 0, 0, 655434, 0, 0, 655435, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720934, 0, 0, 720935, 0, 0, 720936, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0, 720943, 0, 0, 720944, 0, 0, 720945, 0, 0, 720946, 0, 0, 720953, 0, 0, 720954, 0, 0, 720955, 0, 0, 720956, 0, 0, 720957, 0, 0, 720958, 0, 0, 720959, 0, 0, 720960, 0, 0, 720961, 0, 0, 720962, 0, 0, 720963, 0, 0, 720964, 0, 0, 720965, 0, 0, 720966, 0, 0, 720967, 0, 0, 720968, 0, 0, 720969, 0, 0, 720970, 0, 0, 720971, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786464, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786470, 0, 0, 786471, 0, 0, 786472, 0, 0, 786473, 0, 0, 786474, 0, 0, 786475, 0, 0, 786476, 0, 0, 786477, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786489, 0, 0, 786490, 0, 0, 786491, 0, 0, 786492, 0, 0, 786493, 0, 0, 786494, 0, 0, 786495, 0, 0, 786496, 0, 0, 786497, 0, 0, 786498, 0, 0, 786499, 0, 0, 786500, 0, 0, 786501, 0, 0, 786502, 0, 0, 786503, 0, 0, 786504, 0, 0, 786505, 0, 0, 786506, 0, 0, 786507, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 851996, 0, 0, 851997, 0, 0, 851998, 0, 0, 851999, 0, 0, 852000, 0, 0, 852001, 0, 0, 852002, 0, 0, 852003, 0, 0, 852004, 0, 0, 852005, 0, 0, 852006, 0, 0, 852007, 0, 0, 852008, 0, 0, 852009, 0, 0, 852010, 0, 0, 852011, 0, 0, 852012, 0, 0, 852013, 0, 0, 852014, 0, 0, 852015, 0, 0, 852016, 0, 0, 852017, 0, 0, 852018, 0, 0, 852019, 0, 0, 852020, 0, 0, 852021, 0, 0, 852022, 0, 0, 852023, 0, 0, 852024, 0, 0, 852025, 0, 0, 852026, 0, 0, 852027, 0, 0, 852028, 0, 0, 852029, 0, 0, 852030, 0, 0, 852031, 0, 0, 852032, 0, 0, 852033, 0, 0, 852034, 0, 0, 852035, 0, 0, 852036, 0, 0, 852037, 0, 0, 852038, 0, 0, 852039, 0, 0, 852040, 0, 0, 852041, 0, 0, 852042, 0, 0, 852043, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 180, 480 )
+
+[node name="Camera2D" parent="Player" index="0"]
+limit_right = 6080
+
+[node name="Portal2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4080.04, 85.6565 )
+next_scene = ExtResource( 6 )
+
+[node name="Portal2D2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -309.167, 470.329 )
+next_scene = ExtResource( 6 )
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 291.397, 436.769 )
+
+[node name="Coin40" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( -198.077, 229.401 )
+
+[node name="Coin41" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( -126.498, 183.085 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 488.373, 615.717 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 437.053, 552.868 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 58.9468, 438.947 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1570.39, 270.101 )
+
+[node name="Coin34" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 3000.57, 573.707 )
+
+[node name="Coin42" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 3007.1, 839.164 )
+
+[node name="Coin43" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2840.79, 855.761 )
+
+[node name="Coin44" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2779.66, 820.167 )
+
+[node name="Coin45" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2718.54, 768.324 )
+
+[node name="Coin46" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2587.77, 716.481 )
+
+[node name="Coin47" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2523.54, 672.375 )
+
+[node name="Coin48" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2483.31, 610.473 )
+
+[node name="Coin49" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2352.54, 501.37 )
+
+[node name="Coin50" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2351.76, 426.313 )
+
+[node name="Coin35" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2194.6, 41.3542 )
+
+[node name="Coin36" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2190.72, -41.3565 )
+
+[node name="Coin37" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2190.72, -120.19 )
+
+[node name="Coin38" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2193.31, -197.732 )
+
+[node name="Coin39" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2199.77, -272.688 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2169.74, 334.302 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 723.135, 596.806 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 3440, 740 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 3680, 740 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4149.2, 297.676 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4302.75, 571.8 )
+
+[node name="Coin51" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4613.63, 65.1366 )
+
+[node name="Coin53" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5928.62, 518.712 )
+
+[node name="Coin71" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5728.5, 833.013 )
+
+[node name="Coin72" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5642.55, 834.241 )
+
+[node name="Coin54" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5495.92, 296.257 )
+
+[node name="Coin55" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5190.92, 131.257 )
+
+[node name="Coin56" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5683.92, -39.7433 )
+
+[node name="Coin57" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5927.92, -275.743 )
+
+[node name="Coin58" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5483.92, -438.743 )
+
+[node name="Coin59" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5137.92, -593.743 )
+
+[node name="Coin60" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5081.92, -455.743 )
+
+[node name="Coin61" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5008.92, -399.743 )
+
+[node name="Coin62" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4682.92, -193.743 )
+
+[node name="Coin52" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4410.74, 65.1365 )
+
+[node name="Coin63" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4046.46, -342 )
+
+[node name="Coin64" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4047.16, -460.285 )
+
+[node name="Coin66" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4493.65, 282.533 )
+
+[node name="Coin70" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 5065.78, 335.326 )
+
+[node name="Coin67" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2986.09, 201.694 )
+
+[node name="Coin69" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 2759.51, 312.465 )
+
+[node name="Coin68" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4335.49, 778.209 )
+
+[node name="Coin65" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 4200.35, -106.289 )
+
+[node name="Coin12" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 616.249, 226.797 )
+
+[node name="Coin13" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1377.66, 350.498 )
+
+[node name="Coin14" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1239.04, 217.903 )
+
+[node name="Coin15" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1305.46, 289.57 )
+
+[node name="Coin16" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1463.43, 352.185 )
+
+[node name="Coin17" parent="Coins" instance=ExtResource( 7 )]
+modulate = Color( 0, 1, 0.0862745, 1 )
+position = Vector2( 446.619, 910.971 )
+
+[node name="Coin18" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1653.37, 730.636 )
+
+[node name="Coin20" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1655, 802.313 )
+
+[node name="Coin21" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1106.31, 753.483 )
+
+[node name="Coin29" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1304.36, 923.812 )
+
+[node name="Coin30" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1466.77, 922.051 )
+
+[node name="Coin24" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1104.4, 827.563 )
+
+[node name="Coin25" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 933.207, 921.171 )
+
+[node name="Coin26" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 769.453, 924.648 )
+
+[node name="Coin27" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 932.787, 843.533 )
+rotation = -2.68627
+
+[node name="Coin33" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 525.229, 837.811 )
+rotation = -2.68627
+
+[node name="Coin28" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 769.754, 851.718 )
+rotation = -2.68627
+
+[node name="Coin31" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 606.467, 843.796 )
+rotation = -2.68627
+
+[node name="Coin32" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 607.787, 758.412 )
+rotation = -2.68627
+
+[node name="Coin22" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1465.22, 842.224 )
+
+[node name="Coin23" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 1300.16, 839.236 )
+
+[node name="Coin19" parent="Coins" instance=ExtResource( 7 )]
+position = Vector2( 3555.26, 417.368 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 603.01, 940.508 )
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 730.073, 942.951 )
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 831.072, 946.209 )
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 954.877, 938.064 )
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1199.23, 949.467 )
+
+[node name="Enemy13" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1384.94, 955.983 )
+
+[node name="Enemy14" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1502.22, 951.911 )
+
+[node name="Enemy15" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1626.03, 951.096 )
+
+[node name="Enemy16" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1855.72, 945.395 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 168.484, 30.6024 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1794.74, 372.292 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1924.47, 361.692 )
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1929.77, 380.242 )
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 2056.32, 365.939 )
+
+[node name="Enemy20" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 3566.84, 781.729 )
+
+[node name="Enemy21" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 4339.45, 985.044 )
+
+[node name="Enemy26" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 4495.03, 977.03 )
+
+[node name="Enemy27" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 4188.24, 984.795 )
+
+[node name="Enemy23" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 4161.13, 601.01 )
+
+[node name="Enemy24" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 4479.14, 585.11 )
+
+[node name="Enemy29" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 5197.99, 782.722 )
+
+[node name="Enemy30" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 4945.96, 779.858 )
+
+[node name="Enemy25" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 4317.49, 587.76 )
+
+[node name="Enemy22" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 2656.32, -107.745 )
+
+[node name="Enemy28" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 3766.55, -671.672 )
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1754.87, 952.925 )
+
+[node name="Enemy17" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1631.88, 628.751 )
+
+[node name="Enemy18" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1508.08, 632.009 )
+
+[node name="Enemy19" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1852.61, 632.824 )
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1082.71, 942.007 )
+
+[editable path="Player"]
