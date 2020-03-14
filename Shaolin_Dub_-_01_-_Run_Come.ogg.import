@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Shaolin_Dub_-_01_-_Run_Come.ogg-14380689cdf15b5568e097297abee815.oggstr"
+
+[deps]
+
+source_file="res://Shaolin_Dub_-_01_-_Run_Come.ogg"
+dest_files=[ "res://.import/Shaolin_Dub_-_01_-_Run_Come.ogg-14380689cdf15b5568e097297abee815.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

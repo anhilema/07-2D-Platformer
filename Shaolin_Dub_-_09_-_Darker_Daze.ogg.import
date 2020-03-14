@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Shaolin_Dub_-_09_-_Darker_Daze.ogg-2406e16a8c43462fef1d6265d0f5fe13.oggstr"
+
+[deps]
+
+source_file="res://Shaolin_Dub_-_09_-_Darker_Daze.ogg"
+dest_files=[ "res://.import/Shaolin_Dub_-_09_-_Darker_Daze.ogg-2406e16a8c43462fef1d6265d0f5fe13.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

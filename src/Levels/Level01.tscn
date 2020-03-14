@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Shaolin_Dub_-_09_-_Darker_Daze.ogg" type="AudioStream" id=9]
 
 [node name="Level01" type="Node2D"]
 
@@ -173,5 +174,9 @@ position = Vector2( 1406.62, 137.308 )
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 1267.82, 134.677 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
 
 [editable path="Player"]
