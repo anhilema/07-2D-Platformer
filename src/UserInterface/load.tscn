@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="load" type="Button"]
+margin_left = 901.928
+margin_top = 643.457
+margin_right = 1010.93
+margin_bottom = 686.457
+text = "Load"
