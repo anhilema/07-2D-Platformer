@@ -8,4 +8,4 @@ func _ready():
 
 
 func _on_SaveButton_pressed():
-	get_node("/root/Global").save_data()
+	get_node("/root/PlayerData").save_data()

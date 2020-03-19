@@ -14,4 +14,4 @@ func _ready():
 
 
 func _on_load_pressed():
-	get_node("/root/Global").load_data()
+	get_node("/root/PlayerData").load_data()
