@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Shaolin_Dub_-_01_-_Run_Come.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/Levels/Level02.gd" type="Script" id=10]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.176047, 1, 0.00503778, 1, 1, 1, 1, 1 )
@@ -30,6 +31,7 @@ scale = 10.0
 color_ramp = SubResource( 2 )
 
 [node name="Level02" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
